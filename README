@@ -1,0 +1,19 @@
+# Amazon Vendor Remittance Advice
+
+Combines all mentioned invoices to a single document.
+
+How it works: The app checks for emails with subject Remittance Advice and parses the content for mentioned invoices. 
+If the invoices are available in a local directory then they will combined into one document include the email as first page of the document and the email will be deleted from the inbox.
+If not all invoices are available it will send an email to given email address mith listed missing invoices.
+
+###Installation:
+Clone the repo:
+git clone https://github.com/wilketob/remittance-amazon-vendor-invoices.git
+
+Edit settings.json and change the working directory for the invoices (pwd) and credentials for your email system
+
+cd remittance-amazon-vendor-invoices
+
+pip3 install -r requirements.txt 
+
+python3 main.py
