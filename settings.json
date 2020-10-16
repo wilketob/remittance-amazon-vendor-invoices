@@ -1,0 +1,9 @@
+{
+    "pwd": "/your/working/directory/here",
+    "username": "your@email.here",
+    "password": "YourPasswortForTheEmailLogin",
+    "server_in": "your.imap.server",
+    "server_out": "your.smtp.server",
+    "email_admin": "your@email.here",
+    "email_subject": "Missing invoices for Remittance Advice "
+}
