@@ -26,7 +26,7 @@ def main():
     imap.login(json_data["username"], json_data["password"])
     status, messages = imap.select("INBOX")
     # search for messages that has the word remittance in subject
-    typ, msg_ids = imap.search(None, '(SUBJECT "Remittance")')
+    typ, msg_ids = imap.search(None, '(SUBJECT "Remittance Advice")')
     print(f'Status: {status} Typ: {typ} Messages: {msg_ids}')
     # msg_ids is byte -> convert to string and split the string by whitespace
     for msg_id in msg_ids[0].decode().split():
@@ -35,7 +35,7 @@ def main():
         # print(msg_data)
 
         msg_str = str(msg_data[0][1]).lower()  # For better readibility
-
+        print(msg_str)
         # read the html tables from the document with pandas:
         tables_html = pd.read_html(msg_str, skiprows=1)
         payment_n = tables_html[0][1][2]
@@ -76,7 +76,10 @@ def main():
             for fn in file_list:
                 if(str(inv_nr).upper() in fn):
                     list_success.append(fn)
-                    list_missing.remove(inv_nr)
+                    try:
+                        list_missing.remove(inv_nr)
+                    except:
+                        pass
                     i += i
                 else:
                     if(i == 0):

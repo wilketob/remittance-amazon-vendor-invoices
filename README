@@ -17,3 +17,8 @@ cd remittance-amazon-vendor-invoices
 pip3 install -r requirements.txt 
 
 python3 main.py
+
+###ToDos for upcoming versions:
+Download the invoices via vendorcentral api
+Integrate ERP api to request the vendor invoices
+Implement Cloud strorage providers
